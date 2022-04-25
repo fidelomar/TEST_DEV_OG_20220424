@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Web.Entities.Data
 {
-    public partial class BD_TEST_DEVContext : DbContext
+    public partial class DatabaseContext : DbContext
     {
-        public BD_TEST_DEVContext()
+        public DatabaseContext()
         {
         }
 
-        public BD_TEST_DEVContext(DbContextOptions<BD_TEST_DEVContext> options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
         }
