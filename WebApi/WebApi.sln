@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{813B2572-8C9D-4E87-BAAB-CBFED99B9670}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{EC3EF943-D7AE-4DE9-8A93-DB1538572FD1}"
+	ProjectSection(SolutionItems) = preProject
+		01_Security.sql = 01_Security.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Entities", "Web.Entities\Web.Entities.csproj", "{8A369BEF-1E23-445D-ABCA-35DE7571A917}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{813B2572-8C9D-4E87-BAAB-CBFED99B9670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{813B2572-8C9D-4E87-BAAB-CBFED99B9670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{813B2572-8C9D-4E87-BAAB-CBFED99B9670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{813B2572-8C9D-4E87-BAAB-CBFED99B9670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A369BEF-1E23-445D-ABCA-35DE7571A917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A369BEF-1E23-445D-ABCA-35DE7571A917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A369BEF-1E23-445D-ABCA-35DE7571A917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A369BEF-1E23-445D-ABCA-35DE7571A917}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A074B77-AFFA-40EF-9CAF-55B327E9E080}
+	EndGlobalSection
+EndGlobal
