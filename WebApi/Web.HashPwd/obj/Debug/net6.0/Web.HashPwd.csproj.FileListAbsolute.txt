@@ -1,0 +1,5 @@
+C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\Web.HashPwd\obj\Debug\net6.0\Web.HashPwd.csproj.AssemblyReference.cache
+C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\Web.HashPwd\obj\Debug\net6.0\Web.HashPwd.GeneratedMSBuildEditorConfig.editorconfig
+C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\Web.HashPwd\obj\Debug\net6.0\Web.HashPwd.AssemblyInfoInputs.cache
+C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\Web.HashPwd\obj\Debug\net6.0\Web.HashPwd.AssemblyInfo.cs
+C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\Web.HashPwd\obj\Debug\net6.0\Web.HashPwd.csproj.CoreCompileInputs.cache

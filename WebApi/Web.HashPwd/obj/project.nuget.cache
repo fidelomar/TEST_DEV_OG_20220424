@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1eK1znzdXTdFfr8PNyD9u2oLgjfGUe/ZMnwLk3j1lU+4MBOxxyvRUtJ3Lm9Slhu622jzykgrGZ3Hj4fjVZHHuQ==",
+  "success": true,
+  "projectFilePath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.HashPwd\\Web.HashPwd.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.4\\microsoft.aspnetcore.cryptography.internal.6.0.4.nupkg.sha512",
+    "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.4\\microsoft.aspnetcore.cryptography.keyderivation.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -4,14 +4,14 @@
     "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj": {
+    "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Entities\\Web.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
-        "projectName": "WebApi",
-        "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Entities\\Web.Entities.csproj",
+        "projectName": "Web.Entities",
+        "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Entities\\Web.Entities.csproj",
         "packagesPath": "C:\\Users\\camil\\.nuget\\packages\\",
-        "outputPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\obj\\",
+        "outputPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\camil\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,198 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj",
+        "projectName": "Web.Models",
+        "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj",
+        "packagesPath": "C:\\Users\\camil\\.nuget\\packages\\",
+        "outputPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\camil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj",
+        "projectName": "Web.Repository",
+        "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj",
+        "packagesPath": "C:\\Users\\camil\\.nuget\\packages\\",
+        "outputPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\camil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Entities\\Web.Entities.csproj": {
+                "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Entities\\Web.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
+        "projectName": "WebApi",
+        "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\camil\\.nuget\\packages\\",
+        "outputPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\camil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj": {
+                "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj"
+              },
+              "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj": {
+                "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[5.0.16, )"
+              "version": "[5.0.13, )"
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
@@ -50,15 +239,15 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.16, )"
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.13, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.16, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[5.0.13, )"
             }
           },
           "imports": [

@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿#region Utils
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Web.Entities.Data;
-
+#endregion
 namespace Web.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
@@ -35,9 +36,9 @@ namespace Web.Repository
         {
             return _dbSet.Where(predicate);
         }
-        public async IEnumerable<TEntity> ExecuteQuery(string spQuery, object[] parameters)
-        {
-            return await _context.Database.SqlQuery<TEntity>(query, parameters).ToListAsync();
-        }
+        //public async IEnumerable<TEntity> ExecuteQuery(string spQuery, object[] parameters)
+        //{
+        //    return await _context.Database.SqlQuery<TEntity>(Query, parameters).ToListAsync();
+        //}
     }
 }
