@@ -1,29 +1,37 @@
 ﻿-- User: root
--- Pass: abril
+-- Pass: Abril22#
 
-INSERT INTO dbo.AspNetUsers( 
-    Id ,
-    Email ,
-    EmailConfirmed ,
-    PasswordHash ,
-    SecurityStamp ,
-    PhoneNumber ,
-    PhoneNumberConfirmed ,
-    TwoFactorEnabled ,    
-    LockoutEnabled ,
-    AccessFailedCount ,
-    UserName    
-)
-    VALUES  ( 
-    '36040EE4-2475-4BD2-BABC-653D4E683C02' , -- Id - nvarchar(128)
-    'fidelomar@outlook.com' , -- Email
-    0 , -- EmailConfirmed - bit   
-    N'cI6mrrzRQEYhGgLktZ36wa6B60CFNqHPRVUqgdOrGoc=', --PasswordHash
-    N'd5b34c61-2928-434a-a97f-e936501397b1' , -- SecurityStamp - nvarchar(max)
-    null,   -- PhoneNumber - nvarchar(max)
-    0 ,     -- PhoneNumberConfirmed - bit
-    0,      -- TwoFactorEnabled - bit    
-    0,          -- LockoutEnabled - bit
-    0 ,         -- AccessFailedCount - int
-    N'Root'   -- UserName - nvarchar(256)
-    ) 
+INSERT INTO [dbo].[AspNetUsers]
+           ([Id]
+           ,[UserName]
+           ,[NormalizedUserName]
+           ,[Email]
+           ,[NormalizedEmail]
+           ,[EmailConfirmed]
+           ,[PasswordHash]
+           ,[SecurityStamp]
+           ,[ConcurrencyStamp]
+           ,[PhoneNumber]
+           ,[PhoneNumberConfirmed]
+           ,[TwoFactorEnabled]
+           ,[LockoutEnd]
+           ,[LockoutEnabled]
+           ,[AccessFailedCount])
+     VALUES
+           (
+           'b1accdab-fc0b-488b-9c9f-07a6f9e6b2b1',
+           'ogarci4@gmail.com',
+           'OGARCI4@GMAIL.COM',
+           'ogarci4@gmail.com',
+           'OGARCI4@GMAIL.COM',
+           0,
+           'AQAAAAEAACcQAAAAEOd6PXT525qkDINHz7A+leSZiZbdjDLNGIjrdaOqzbKZuWhicJFLcJyhPYzhUgWHXw==',
+           'QJ3IQGQOAUOK4VO3ZNB63E3VJNXFL3GS',
+           '665748d2-6871-435c-891b-fba72167f54e',
+           '',
+           '',
+           0,
+           '',
+           1,
+           0)
+GO

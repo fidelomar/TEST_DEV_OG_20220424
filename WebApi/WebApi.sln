@@ -16,9 +16,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Entities", "Web.Entitie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Repository", "Web.Repository\Web.Repository.csproj", "{34CD5753-EAC1-4047-A153-73C348919D5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Models", "Web.Models\Web.Models.csproj", "{F06B6D56-B23F-454B-A52F-A5B1A8E08005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Models", "Web.Models\Web.Models.csproj", "{F06B6D56-B23F-454B-A52F-A5B1A8E08005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.HashPwd", "Web.HashPwd\Web.HashPwd.csproj", "{9E66F938-4A64-44A1-A256-349E8D899F85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.HashPwd", "Web.HashPwd\Web.HashPwd.csproj", "{9E66F938-4A64-44A1-A256-349E8D899F85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{9E66F938-4A64-44A1-A256-349E8D899F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E66F938-4A64-44A1-A256-349E8D899F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E66F938-4A64-44A1-A256-349E8D899F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

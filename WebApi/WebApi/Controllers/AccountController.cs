@@ -1,4 +1,5 @@
 ﻿#region Utils
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -8,13 +9,14 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Web.Entities;
 using Web.Models;
 #endregion
 namespace WebApi.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;       
         private readonly IConfiguration _configuration;
         public AccountController(UserManager<IdentityUser> 
             userManager, IConfiguration configuration)
@@ -26,11 +28,12 @@ namespace WebApi.Controllers
         {
             return View();
         }
-        
-        [HttpPost]
-        public async Task<IActionResult> Login([FromForm] LoginModel model)
+
+        [AllowAnonymous]
+        [HttpPost]        
+        public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            var user = await _userManager.FindByNameAsync(model.Username);
+            var user = await _userManager.FindByEmailAsync(model.Username);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
                 var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
@@ -38,7 +41,7 @@ namespace WebApi.Controllers
 
                 var claims = new Claim[]
                 {
-                    new Claim("email", user.Email)
+                    new Claim("name", user.UserName)
                 };
 
                 var token = new JwtSecurityToken(
@@ -53,7 +56,7 @@ namespace WebApi.Controllers
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo,
-                    firstname = user.UserName,
+                    username = user.UserName,
                     userid = user.Id
                 });
             }

@@ -1,6 +1,8 @@
-﻿namespace WebApi.Authentication
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace WebApi.Authentication
 {
-    public class ApplicationUser
+    public class ApplicationUser: IdentityUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
