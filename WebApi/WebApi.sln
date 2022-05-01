@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Models", "Web.Models\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.HashPwd", "Web.HashPwd\Web.HashPwd.csproj", "{9E66F938-4A64-44A1-A256-349E8D899F85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplication\WebApplication.csproj", "{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationMVC", "WebApplicationMVC\WebApplicationMVC.csproj", "{60AC3F69-4D32-435F-81E1-F9D004864EDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA8B93DC-72C0-4E8F-B4F3-C9347813198B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60AC3F69-4D32-435F-81E1-F9D004864EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AC3F69-4D32-435F-81E1-F9D004864EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AC3F69-4D32-435F-81E1-F9D004864EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AC3F69-4D32-435F-81E1-F9D004864EDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

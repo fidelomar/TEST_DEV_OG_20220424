@@ -13,6 +13,8 @@ using Web.Models;
 #endregion
 namespace WebApplication.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -29,6 +31,7 @@ namespace WebApplication.Controllers
         }
         
         [HttpPost]
+        [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
             try

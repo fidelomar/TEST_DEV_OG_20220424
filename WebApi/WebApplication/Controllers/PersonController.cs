@@ -10,6 +10,8 @@ using WebApplication.Strategy;
 
 namespace WebApplication.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class PersonController : Controller
     {
         private readonly DatabaseContext _context;
