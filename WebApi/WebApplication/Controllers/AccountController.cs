@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿#region Utils
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -9,7 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Web.Models;
-
+#endregion
 namespace WebApplication.Controllers
 {
     public class AccountController : Controller
@@ -26,7 +27,6 @@ namespace WebApplication.Controllers
         {
             return View();
         }
-
         
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -34,34 +34,32 @@ namespace WebApplication.Controllers
             try
             {
                 var user = await _userManager.FindByEmailAsync(model.Username);
-                                             
                 if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
-            {
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
-                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-                var claims = new Claim[]
                 {
-                    new Claim("name", user.UserName)
-                };
+                    var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+                    var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-                var token = new JwtSecurityToken(
-                    issuer: _configuration["JWT:ValidIssuer"],
-                    audience: _configuration["JWT:ValidAudience"],
-                    claims,
-                    expires: DateTime.Now.AddDays(1),
-                    signingCredentials: credentials
-                    );
+                    var claims = new Claim[]
+                    {
+                        new Claim("name", user.UserName)
+                    };
 
-                return Ok(new
-                {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = token.ValidTo,
-                    username = user.UserName,
-                    userid = user.Id
-                });
-            }
+                    var token = new JwtSecurityToken(
+                        issuer: _configuration["JWT:ValidIssuer"],
+                        audience: _configuration["JWT:ValidAudience"],
+                        claims,
+                        expires: DateTime.Now.AddDays(1),
+                        signingCredentials: credentials
+                        );
 
+                    return Ok(new
+                    {
+                        token = new JwtSecurityTokenHandler().WriteToken(token),
+                        expiration = token.ValidTo,
+                        username = user.UserName,
+                        //userid = user.UserName
+                    });
+                }
             }
             catch (Exception ex)
             {

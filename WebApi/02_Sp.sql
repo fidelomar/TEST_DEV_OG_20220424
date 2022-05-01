@@ -124,7 +124,6 @@ BEGIN
 END;
 GO
 
-
 CREATE PROCEDURE dbo.sp_EliminarPersonaFisica
 (@IdPersonaFisica INT)
 AS

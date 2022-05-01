@@ -36,9 +36,9 @@ namespace Web.Repository
         {
             return _dbSet.Where(predicate);
         }
-        //public async IEnumerable<TEntity> ExecuteQuery(string spQuery, object[] parameters)
-        //{
-        //    return await _context.Database.SqlQuery<TEntity>(Query, parameters).ToListAsync();
-        //}
+        public IEnumerable<TEntity> ExecuteQuery(string query, params object[] parameters)
+        {
+            return _context.Set<TEntity>().FromSqlRaw(query);
+        }
     }
 }
