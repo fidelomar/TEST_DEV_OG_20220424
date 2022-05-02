@@ -35,10 +35,6 @@ namespace Web.Repository
         public IQueryable<TEntity> GetBy(Expression<Func<TEntity, bool>> predicate)
         {
             return _dbSet.Where(predicate);
-        }
-        public IEnumerable<TEntity> ExecuteQuery(string query, params object[] parameters)
-        {
-            return _context.Set<TEntity>().FromSqlRaw(query);
-        }
+        }        
     }
 }

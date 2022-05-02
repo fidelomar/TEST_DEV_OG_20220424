@@ -17,7 +17,6 @@ namespace Web.Repository
         void Add(TEntity data);
         void Delete(int id);
         void Update(TEntity data);
-        void Save();        
-        IEnumerable<TEntity> ExecuteQuery(string spQuery, object[] parameters); 
+        void Save();
     }
 }

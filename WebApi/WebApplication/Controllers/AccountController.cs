@@ -30,6 +30,7 @@ namespace WebApplication.Controllers
             return View();
         }
         
+        [AllowAnonymous]
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -59,8 +60,7 @@ namespace WebApplication.Controllers
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(token),
                         expiration = token.ValidTo,
-                        username = user.UserName,
-                        //userid = user.UserName
+                        username = user.UserName
                     });
                 }
             }

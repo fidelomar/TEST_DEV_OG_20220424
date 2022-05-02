@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Web.Entities.Data;
+using Web.Models;
 using Web.Repository.UnitOfWork;
 
 namespace WebApplication.Strategy

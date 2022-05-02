@@ -31,10 +31,11 @@ namespace WebApplication.Controllers
         
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddPerson([FromBody] TbPersonasFisica personasFisica)
+        [Route("add")]
+        public async Task<IActionResult> AddPerson([FromBody] TbPersonasFisica person)
         {
             var context = new PersonStrategyContext(new PersonStrategy());
-            await context.AddPerson(personasFisica, _context);
+            await context.AddPerson(person, _context);
             //return StatusCode(StatusCodes.Status500InternalServerError);
             return Ok(new TbPersonasFisica());
         }
