@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Newtonsoft.Json;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplicationMVC.Models
@@ -7,25 +8,30 @@ namespace WebApplicationMVC.Models
     {
         [Required(ErrorMessage = "Información requerida")]
         [MaxLength(150)]
+        [JsonProperty("nombre")]
         [DisplayName("Nombre")]
         public string Name { get; set; }
         
         [Required(ErrorMessage = "Información requerida")]
         [MaxLength(150)]
+        [JsonProperty("apellidopaterno")]
         [DisplayName("Apellido Paterno")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Información requerida")]
         [MaxLength(150)]
+        [JsonProperty("apellidomaterno")]
         [DisplayName("Apellido Materno")]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Información requerida")]
         [MaxLength(150)]
+        [JsonProperty("rfc")]
         [DisplayName("RFC")]
         public string RFC { get; set; }
 
         [MaxLength(150)]
+        [JsonProperty("fechanacimiento")]
         [DisplayName("Fecha de nacimiento")]
         public string BirthDate { get; set; }
     }

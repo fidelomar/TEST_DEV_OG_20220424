@@ -14,7 +14,7 @@ function LoadDataTable() {
         "columns":[
             { "data": "nombre", "with": "30%" },
             { "data": "rfc", "with": "20%" },
-            { "data": "fechaNacimiento", "with": "20%" },
+            { "data": "fechanacimiento", "with": "20%" },
             {
                 "data": "id",
                 "render": function (data) {
