@@ -35,6 +35,6 @@ namespace Web.Repository
         public IQueryable<TEntity> GetBy(Expression<Func<TEntity, bool>> predicate)
         {
             return _dbSet.Where(predicate);
-        }        
+        }
     }
 }

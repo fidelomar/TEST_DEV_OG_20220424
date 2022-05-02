@@ -7,7 +7,6 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Web.Entities.Data;
-using Web.Models;
 using Web.Repository.UnitOfWork;
 #endregion
 
@@ -102,11 +101,7 @@ namespace WebApplication.Strategy
         {
             IEnumerable<TbPersonasFisica> tbPersonasFisicas = null;
 
-            var query = _unitOfWork.
-                TbPersonasFisica.
-                Get().
-                Where(w => w.Activo == true).
-                ToList();
+            IEnumerable<TbPersonasFisica> query = _unitOfWork.TbPersonasFisica.GetBy(w=>w.Activo==true).ToList();
 
             if(query != null)
                 tbPersonasFisicas = query;

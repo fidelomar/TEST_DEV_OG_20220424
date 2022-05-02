@@ -17,7 +17,7 @@ namespace WebApplicationMVC.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> PostLogin([FromForm] LoginModel login)
+        public async Task<IActionResult> PostLogin([FromForm] UserModel login)
         {
             if (!ModelState.IsValid)
                 return View();

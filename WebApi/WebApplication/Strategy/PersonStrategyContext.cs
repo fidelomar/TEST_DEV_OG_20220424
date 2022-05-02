@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿#region Utils
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Web.Entities.Data;
-using Web.Models;
 using Web.Repository.UnitOfWork;
+#endregion
 
 namespace WebApplication.Strategy
 {

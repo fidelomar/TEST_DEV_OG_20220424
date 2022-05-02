@@ -15,6 +15,10 @@ namespace Web.Repository.UnitOfWork
                     _TbPersonasFisica;
             }
         }
+        public UnitOfWork(DatabaseContext context)
+        {
+            _context = context;
+        }
         public void Save()
         {
             _context.SaveChanges();

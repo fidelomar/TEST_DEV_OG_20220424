@@ -1,9 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿#region Utils
+using Newtonsoft.Json;
 using System.Collections;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+#endregion
 namespace WebApplicationMVC.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
@@ -49,7 +51,7 @@ namespace WebApplicationMVC.Repository
         }
         public async Task<IEnumerable> GetAllAsync(string url)
         {
-            var request = new HttpRequestMessage(HttpMethod.Patch, url);
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
             var client = _clientFactory.CreateClient();
 
             HttpResponseMessage response = await client.SendAsync(request);
@@ -57,7 +59,7 @@ namespace WebApplicationMVC.Repository
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<IEnumerable>(jsonString);
+                return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
             }
             else
             {
@@ -66,7 +68,7 @@ namespace WebApplicationMVC.Repository
         }
         public async Task<T> GetAsync(string url, int Id)
         {
-            var request = new HttpRequestMessage(HttpMethod.Patch, url + Id);
+            var request = new HttpRequestMessage(HttpMethod.Get, url + Id);
             var client = _clientFactory.CreateClient();
 
             HttpResponseMessage response = await client.SendAsync(request);

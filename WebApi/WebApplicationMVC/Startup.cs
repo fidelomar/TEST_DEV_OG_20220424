@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplicationMVC.Repository;
 
 namespace WebApplicationMVC
 {
@@ -24,6 +25,9 @@ namespace WebApplicationMVC
         {
             services.AddControllersWithViews();
             services.AddHttpClient();
+            services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IReportRepository, ReportRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

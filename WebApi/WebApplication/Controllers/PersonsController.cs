@@ -1,23 +1,23 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿#region Utils
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Web.Entities.Data;
-using Web.Models;
 using Web.Repository.UnitOfWork;
 using WebApplication.Strategy;
+#endregion
 
 namespace WebApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PersonController : Controller
+    public class PersonsController : Controller
     {
         private readonly DatabaseContext _context;
         private readonly IUnitOfWork _unitOfWork;
 
-        public PersonController(
+        public PersonsController(
             IUnitOfWork unitOfWork,
             DatabaseContext context)
         {
@@ -29,7 +29,7 @@ namespace WebApplication.Controllers
             return View();
         }
         
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [Route("add")]
         public async Task<IActionResult> AddPerson([FromBody] TbPersonasFisica person)
@@ -40,7 +40,7 @@ namespace WebApplication.Controllers
             return Ok(new TbPersonasFisica());
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPut]
         public async Task<IActionResult> PutPerson([FromBody] TbPersonasFisica personasFisica)
         {
@@ -49,7 +49,7 @@ namespace WebApplication.Controllers
             return Ok(new TbPersonasFisica());
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<IActionResult> DeletePerson([FromBody] TbPersonasFisica personasFisica)
         {
@@ -58,8 +58,9 @@ namespace WebApplication.Controllers
             return Ok(new TbPersonasFisica());
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
+        [Route("getperson")]
         public async Task<TbPersonasFisica> GetPerson([FromBody] TbPersonasFisica personasFisica)
         {
             TbPersonasFisica tbPersonasFisica = null;
@@ -70,9 +71,10 @@ namespace WebApplication.Controllers
             return tbPersonasFisica;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
-        public async Task<IEnumerable<TbPersonasFisica>> GetPersons([FromBody] TbPersonasFisica personasFisica)
+        [Route("getpersons")]
+        public async Task<IEnumerable<TbPersonasFisica>> GetPersons()
         {
             IEnumerable<TbPersonasFisica> tbPersonasFisica = null;
             var context = new PersonStrategyContext(new PersonStrategy());

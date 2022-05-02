@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Web.Entities;
 using Web.Entities.Data;
+using Web.Repository;
 using Web.Repository.UnitOfWork;
 
 namespace WebApplication
@@ -35,10 +36,16 @@ namespace WebApplication
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("Connection")));
+            services.AddSingleton<IConfiguration>(Configuration);
+
             services.AddDatabaseDeveloperPageExceptionFilter();
+            
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<DatabaseContext>();
+            
             services.AddRazorPages();
+            
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
