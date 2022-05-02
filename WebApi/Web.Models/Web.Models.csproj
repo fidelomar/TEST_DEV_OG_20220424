@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Account\LoginModel.cs" />
+    <Compile Remove="Person\PersonModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="Person\" />
+  </ItemGroup>
+
 </Project>

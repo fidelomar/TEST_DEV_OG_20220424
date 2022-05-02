@@ -5,13 +5,13 @@ namespace WebApplicationMVC.Models
 {
     public class LoginModel
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Información requerida")]
-        [MaxLength(20)]
         [DisplayName("Usuario")]
         public string UserName { get; set; }
         
-        [Required(ErrorMessage = "Información requerida")]
-        [MaxLength(15)]
+        [Required(ErrorMessage = "Información requerida")]        
         [DisplayName("Contraseña")]
         public string Password { get; set; }
     }
