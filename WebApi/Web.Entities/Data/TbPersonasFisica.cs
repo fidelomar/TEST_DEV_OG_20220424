@@ -16,6 +16,6 @@ namespace Web.Entities.Data
         public string Rfc { get; set; }
         public DateTime? FechaNacimiento { get; set; }
         public int? UsuarioAgrega { get; set; }
-        public bool? Activo { get; set; }
+        public bool? Activo { get; set; }        
     }
 }

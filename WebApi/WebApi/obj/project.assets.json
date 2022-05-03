@@ -8193,27 +8193,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\omar\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\camil\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\githubrepositories_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "E:\\githubrepositories_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\omar\\.nuget\\packages\\",
-      "outputPath": "E:\\githubrepositories_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\obj\\",
+      "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\camil\\.nuget\\packages\\",
+      "outputPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\omar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\camil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -8226,11 +8219,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\githubrepositories_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj": {
-              "projectPath": "E:\\githubrepositories_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj"
+            "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj": {
+              "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Models\\Web.Models.csproj"
             },
-            "E:\\githubrepositories_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj": {
-              "projectPath": "E:\\githubrepositories_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj"
+            "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj": {
+              "projectPath": "C:\\githubrepositores_og\\TEST_DEV_OG_20220424\\WebApi\\Web.Repository\\Web.Repository.csproj"
             }
           }
         }
@@ -8290,12 +8283,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.16, 5.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -8304,7 +8291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

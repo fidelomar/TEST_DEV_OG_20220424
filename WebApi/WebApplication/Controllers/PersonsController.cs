@@ -31,7 +31,7 @@ namespace WebApplication.Controllers
         
         //[Authorize]
         [HttpPost]
-        [Route("add")]
+        [Route("AddPerson")]
         public async Task<IActionResult> AddPerson([FromBody] TbPersonasFisica person)
         {
             var context = new PersonStrategyContext(new PersonStrategy());
@@ -60,7 +60,7 @@ namespace WebApplication.Controllers
 
         //[Authorize]
         [HttpGet]
-        [Route("getperson")]
+        [Route("GetPerson")]
         public async Task<TbPersonasFisica> GetPerson([FromBody] TbPersonasFisica personasFisica)
         {
             TbPersonasFisica tbPersonasFisica = null;
@@ -73,7 +73,7 @@ namespace WebApplication.Controllers
 
         //[Authorize]
         [HttpGet]
-        [Route("getpersons")]
+        [Route("GetPersons")]
         public async Task<IEnumerable<TbPersonasFisica>> GetPersons()
         {
             IEnumerable<TbPersonasFisica> tbPersonasFisica = null;

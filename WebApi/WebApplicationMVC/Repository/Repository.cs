@@ -10,15 +10,14 @@ namespace WebApplicationMVC.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly IHttpClientFactory _clientFactory;
-       
+        private readonly IHttpClientFactory _clientFactory;       
         public Repository(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }
         public async Task<bool> CreateAsync(string url, T itemCreate)
         {
-            var request = new HttpRequestMessage(HttpMethod.Patch, url);
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
 
             if (itemCreate != null)
             {

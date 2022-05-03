@@ -90,6 +90,7 @@ namespace WebApplication.Strategy
                 .TbPersonasFisica
                 .GetBy(u => u.IdPersonaFisica == PersonId)
                 .Where(w=>w.Activo == true)
+                .OrderBy(s=>s.ApellidoMaterno)
                 .FirstOrDefault();
 
             if (query != null)
@@ -101,7 +102,10 @@ namespace WebApplication.Strategy
         {
             IEnumerable<TbPersonasFisica> tbPersonasFisicas = null;
 
-            IEnumerable<TbPersonasFisica> query = _unitOfWork.TbPersonasFisica.GetBy(w=>w.Activo==true).ToList();
+            IEnumerable<TbPersonasFisica> query = _unitOfWork.TbPersonasFisica
+                .GetBy(w=>w.Activo==true)
+                .OrderBy(s=>s.ApellidoPaterno)
+                .ToList();
 
             if(query != null)
                 tbPersonasFisicas = query;
