@@ -1,5 +1,6 @@
 ﻿#region Utils
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -75,6 +76,38 @@ namespace WebApplicationMVC.Repository
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<IEnumerable> GetReportAsync(string url, string token = "")
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
+            var client = _clientFactory.CreateClient();
+
+            if (token != null && token.Length != 0)
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+
+                try
+                {
+                    var test = JsonConvert.DeserializeObject<List<T>>(jsonString);
+                }
+                catch (Exception ex)
+                {
+                    var msj = ex.Message;
+                }
+                return null;
+                //return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
             }
             else
             {

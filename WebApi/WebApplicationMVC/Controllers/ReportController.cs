@@ -24,7 +24,7 @@ namespace WebApplicationMVC.Controllers
             {
                 data =
                 await _repository
-                .GetAllAsync(ApiUrl.ApiReportRoute + "candidato/api/customers", HttpContext.Session.GetString("JWTokenReport"))
+                .GetReportAsync(ApiUrl.ApiReportRoute + "candidato/api/customers", HttpContext.Session.GetString("JWTokenReport"))
             });
         }
     }

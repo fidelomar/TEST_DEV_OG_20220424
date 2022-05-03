@@ -11,6 +11,16 @@ function LoadDataTable() {
             "type": "GET",
             "datatype": "json"
         },
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por página",
+            "zeroRecords": "sin resultados - sorry",
+            "info": "Mostrar página _PAGE_ de _PAGES_",
+            "infoEmpty": "No disponible",
+            "infoFiltered": "(filtro de _MAX_ total registros)",
+            "previous": "Anterior",
+            "next": "Siguiente",
+            "search":"Buscar"
+        },
         "columns":[
             { "data": "firstName", "with": "30%" },
             { "data": "lastName", "with": "30%" },
