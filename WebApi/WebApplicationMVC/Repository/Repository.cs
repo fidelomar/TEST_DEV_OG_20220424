@@ -38,7 +38,7 @@ namespace WebApplicationMVC.Repository
         }
         public async Task<bool> DeleteAsync(string url, int Id)
         {
-            var request = new HttpRequestMessage(HttpMethod.Patch, url + Id);        
+            var request = new HttpRequestMessage(HttpMethod.Delete, url + Id);        
             var client = _clientFactory.CreateClient();
 
             HttpResponseMessage responseMessage = await client.SendAsync(request);
@@ -84,7 +84,7 @@ namespace WebApplicationMVC.Repository
         }
         public async Task<bool> UpdateAsync(string url, T itemUpdate)
         {
-            var request = new HttpRequestMessage(HttpMethod.Patch, url);
+            var request = new HttpRequestMessage(HttpMethod.Put, url);
 
             if(itemUpdate != null)
             {

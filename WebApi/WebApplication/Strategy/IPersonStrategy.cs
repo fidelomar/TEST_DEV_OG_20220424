@@ -9,7 +9,7 @@ namespace WebApplication.Strategy
     {
         public Task AddPerson(TbPersonasFisica model, DatabaseContext _context);
         public Task UpdatePerson(TbPersonasFisica model, DatabaseContext _context);
-        public Task DeletePerson(TbPersonasFisica model, DatabaseContext _context);
+        public Task DeletePerson(int Id, DatabaseContext _context);
         public Task<IEnumerable<TbPersonasFisica>> GetPersons(IUnitOfWork _unitOfWork);
         public Task<TbPersonasFisica> GetPerson(IUnitOfWork _unitOfWork, int PersonId);
     }

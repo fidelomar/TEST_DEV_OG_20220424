@@ -38,7 +38,7 @@ namespace WebApplication.Strategy
                 var msj = ex.Message;
             }
         }
-        public async Task DeletePerson(TbPersonasFisica model, DatabaseContext _context)
+        public async Task DeletePerson(int Id, DatabaseContext _context)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace WebApplication.Strategy
                     Database.
                     ExecuteSqlInterpolatedAsync
                     ($@"EXEC sp_EliminarPersonaFisica 
-                        @IdPersonaFisica={model.@IdPersonaFisica}                        
+                        @IdPersonaFisica={Id}
                     ");
             }
             catch (Exception ex)

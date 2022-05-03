@@ -14,7 +14,6 @@ namespace WebApplicationMVC.Controllers
         {
             _personRepository = personRepository;
         }
-
         #region Index
         public IActionResult Index()
         {
@@ -45,7 +44,57 @@ namespace WebApplicationMVC.Controllers
             await _personRepository.CreateAsync(ApiUrl.PersonRoute+"AddPerson", person);
             
             return RedirectToAction(nameof(Index));
-        }        
+        }
+        #endregion
+        #region Edit
+        [HttpGet]
+        public async Task<IActionResult> EditPerson(int? Id)
+        {
+            PersonModel person = new PersonModel();
+
+            if (Id == null)
+                return NotFound();
+
+            person = await _personRepository.GetAsync(ApiUrl.PersonRoute + "GetPerson?id=", Id.GetValueOrDefault());
+
+            if(person == null)
+            {
+                return NotFound();
+            }
+
+            return View(person);
+        }
+        
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> EditPerson(PersonModel person)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            await _personRepository.UpdateAsync(ApiUrl.PersonRoute + "PutPerson" , person);
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
+        #region Delete
+        [HttpDelete]
+        public async Task<IActionResult> DeletePerson(int Id)
+        {            
+            if (Id == 0)
+                return NotFound();
+
+            await _personRepository.DeleteAsync(ApiUrl.PersonRoute + "DeletePerson?id=", Id);
+
+            return Json(new { success = true, message = "Borrado correctamente" });
+
+            //return RedirectToAction(nameof(Index));
+            //if (person == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //return View(person);
+        }
         #endregion
     }
 }

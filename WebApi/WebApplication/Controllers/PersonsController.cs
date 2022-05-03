@@ -42,6 +42,7 @@ namespace WebApplication.Controllers
 
         //[Authorize]
         [HttpPut]
+        [Route("PutPerson")]
         public async Task<IActionResult> PutPerson([FromBody] TbPersonasFisica personasFisica)
         {
             var context = new PersonStrategyContext(new PersonStrategy());
@@ -50,25 +51,29 @@ namespace WebApplication.Controllers
         }
 
         //[Authorize]
-        [HttpPost]
-        public async Task<IActionResult> DeletePerson([FromBody] TbPersonasFisica personasFisica)
+        [HttpDelete]
+        [Route("DeletePerson")]
+        public async Task<IActionResult> DeletePerson(int Id)
         {
             var context = new PersonStrategyContext(new PersonStrategy());
-            await context.DeletePerson(personasFisica, _context);
+            await context.DeletePerson(Id, _context);
             return Ok(new TbPersonasFisica());
         }
 
         //[Authorize]
         [HttpGet]
         [Route("GetPerson")]
-        public async Task<TbPersonasFisica> GetPerson([FromBody] TbPersonasFisica personasFisica)
+        public async Task<IActionResult> GetPerson(int Id)
         {
+            if(Id==0)
+                return NotFound();
+
             TbPersonasFisica tbPersonasFisica = null;
 
             var context = new PersonStrategyContext(new PersonStrategy());
-            tbPersonasFisica = await context.GetPerson(_unitOfWork, personasFisica.IdPersonaFisica);
+            tbPersonasFisica = await context.GetPerson(_unitOfWork, Id);
 
-            return tbPersonasFisica;
+            return Ok(tbPersonasFisica);
         }
 
         //[Authorize]

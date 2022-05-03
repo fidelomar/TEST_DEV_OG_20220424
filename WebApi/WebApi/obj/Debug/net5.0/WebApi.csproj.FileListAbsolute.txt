@@ -343,3 +343,4 @@ E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApi\obj\Debug\net5.0\ref
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApi\obj\Debug\net5.0\WebApi.pdb
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApi\obj\Debug\net5.0\ref\WebApi.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApi\obj\Debug\net5.0\WebApi.MvcApplicationPartsAssemblyInfo.cs

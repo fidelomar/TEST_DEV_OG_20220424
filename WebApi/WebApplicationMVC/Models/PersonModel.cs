@@ -38,5 +38,8 @@ namespace WebApplicationMVC.Models
         
         [JsonProperty("UsuarioAgrega")]
         public int UserId { get; set; }
+
+        [JsonProperty("IdPersonaFisica")]
+        public int Id { get; set; }
     }
 }
