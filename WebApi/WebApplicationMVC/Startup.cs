@@ -1,13 +1,14 @@
+#region Utils
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebApplicationMVC.Repository;
+#endregion
 
 namespace WebApplicationMVC
 {
@@ -27,7 +28,21 @@ namespace WebApplicationMVC
             services.AddHttpClient();
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IReportRepository, ReportRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => {
+                    options.Cookie.HttpOnly = true;
+                    options.ExpireTimeSpan = TimeSpan.FromHours(1);
+                    options.LoginPath = "/Home/Login";
+                    options.AccessDeniedPath = "/Home/AccessDenied";
+                    options.SlidingExpiration = true;
+                });
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromHours(1);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,10 +57,10 @@ namespace WebApplicationMVC
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
+            app.UseSession();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

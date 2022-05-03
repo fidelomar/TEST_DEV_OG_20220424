@@ -29,18 +29,17 @@ namespace WebApplication.Controllers
             return View();
         }
         
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         [Route("AddPerson")]
         public async Task<IActionResult> AddPerson([FromBody] TbPersonasFisica person)
         {
             var context = new PersonStrategyContext(new PersonStrategy());
-            await context.AddPerson(person, _context);
-            //return StatusCode(StatusCodes.Status500InternalServerError);
+            await context.AddPerson(person, _context);            
             return Ok(new TbPersonasFisica());
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPut]
         [Route("PutPerson")]
         public async Task<IActionResult> PutPerson([FromBody] TbPersonasFisica personasFisica)
@@ -50,7 +49,7 @@ namespace WebApplication.Controllers
             return Ok(new TbPersonasFisica());
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpDelete]
         [Route("DeletePerson")]
         public async Task<IActionResult> DeletePerson(int Id)
@@ -60,7 +59,7 @@ namespace WebApplication.Controllers
             return Ok(new TbPersonasFisica());
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         [Route("GetPerson")]
         public async Task<IActionResult> GetPerson(int Id)
@@ -76,7 +75,7 @@ namespace WebApplication.Controllers
             return Ok(tbPersonasFisica);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         [Route("GetPersons")]
         public async Task<IEnumerable<TbPersonasFisica>> GetPersons()

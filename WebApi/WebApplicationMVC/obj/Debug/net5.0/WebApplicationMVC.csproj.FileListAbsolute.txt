@@ -170,3 +170,4 @@ E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug
 C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Persons\AddPerson.cshtml.g.cs
 C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Persons\EditPerson.cshtml.g.cs
 C:\githubrepositores_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Persons\Index.cshtml.g.cs
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs

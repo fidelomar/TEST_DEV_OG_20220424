@@ -15,7 +15,7 @@ namespace WebApplicationMVC.Repository
         {
             _clientFactory = clientFactory;
         }
-        public async Task<bool> CreateAsync(string url, T itemCreate)
+        public async Task<bool> CreateAsync(string url, T itemCreate, string token = "")
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 
@@ -29,17 +29,28 @@ namespace WebApplicationMVC.Repository
             }
 
             var client = _clientFactory.CreateClient();
-            HttpResponseMessage responseMessage = await client.SendAsync(request);
+            
+            if (token != null && token.Length != 0)
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
+
+            HttpResponseMessage responseMessage = await client.SendAsync(request);            
 
             if (responseMessage.StatusCode == System.Net.HttpStatusCode.Created)
                 return true;
             else
                 return false;
         }
-        public async Task<bool> DeleteAsync(string url, int Id)
+        public async Task<bool> DeleteAsync(string url, int Id, string token = "")
         {
             var request = new HttpRequestMessage(HttpMethod.Delete, url + Id);        
             var client = _clientFactory.CreateClient();
+
+            if (token != null && token.Length != 0)
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
 
             HttpResponseMessage responseMessage = await client.SendAsync(request);
 
@@ -48,10 +59,15 @@ namespace WebApplicationMVC.Repository
             else
                 return false;
         }
-        public async Task<IEnumerable> GetAllAsync(string url)
+        public async Task<IEnumerable> GetAllAsync(string url, string token = "")
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             var client = _clientFactory.CreateClient();
+
+            if (token != null && token.Length != 0)
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
 
             HttpResponseMessage response = await client.SendAsync(request);
 
@@ -65,12 +81,22 @@ namespace WebApplicationMVC.Repository
                 return null;
             }
         }
-        public async Task<T> GetAsync(string url, int Id)
+        public async Task<T> GetAsync(string url, int Id, string token = "")
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url + Id);
             var client = _clientFactory.CreateClient();
 
+            if (token != null && token.Length != 0)
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
+
             HttpResponseMessage response = await client.SendAsync(request);
+
+            if (token != null && token.Length != 0)
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
@@ -82,7 +108,7 @@ namespace WebApplicationMVC.Repository
                 return null;
             }
         }
-        public async Task<bool> UpdateAsync(string url, T itemUpdate)
+        public async Task<bool> UpdateAsync(string url, T itemUpdate, string token = "")
         {
             var request = new HttpRequestMessage(HttpMethod.Put, url);
 
@@ -96,6 +122,12 @@ namespace WebApplicationMVC.Repository
             }
 
             var client = _clientFactory.CreateClient();
+
+            if (token != null && token.Length != 0)
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
+
             HttpResponseMessage responseMessage = await client.SendAsync(request);
 
             if (responseMessage.StatusCode == System.Net.HttpStatusCode.NoContent)

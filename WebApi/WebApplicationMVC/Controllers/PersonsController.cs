@@ -1,4 +1,5 @@
 ﻿#region Utils
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using WebApplicationMVC.Config;
@@ -19,10 +20,14 @@ namespace WebApplicationMVC.Controllers
         {
             return View(new PersonModel() { });
         }
-        [HttpGet]
+        
+        [HttpGet]        
         public async Task<IActionResult> GetAllPersons()
         {
-            return Json(new { data = await _personRepository.GetAllAsync(ApiUrl.PersonRoute+"GetPersons") });
+            
+            return Json(new { data = 
+                await _personRepository
+                .GetAllAsync(ApiUrl.PersonRoute+"GetPersons", HttpContext.Session.GetString("JWToken")) });
         }        
         #endregion
         #region Add
@@ -41,7 +46,7 @@ namespace WebApplicationMVC.Controllers
             
             person.UserId = 1;
 
-            await _personRepository.CreateAsync(ApiUrl.PersonRoute+"AddPerson", person);
+            await _personRepository.CreateAsync(ApiUrl.PersonRoute+"AddPerson", person, HttpContext.Session.GetString("JWToken"));
             
             return RedirectToAction(nameof(Index));
         }
@@ -55,7 +60,9 @@ namespace WebApplicationMVC.Controllers
             if (Id == null)
                 return NotFound();
 
-            person = await _personRepository.GetAsync(ApiUrl.PersonRoute + "GetPerson?id=", Id.GetValueOrDefault());
+            person = await _personRepository
+                .GetAsync(
+                ApiUrl.PersonRoute + "GetPerson?id=", Id.GetValueOrDefault(), HttpContext.Session.GetString("JWToken"));
 
             if(person == null)
             {
@@ -72,7 +79,9 @@ namespace WebApplicationMVC.Controllers
             if (!ModelState.IsValid)
                 return View();
 
-            await _personRepository.UpdateAsync(ApiUrl.PersonRoute + "PutPerson" , person);
+            await _personRepository.UpdateAsync(
+                ApiUrl.PersonRoute + "PutPerson" , person, HttpContext.Session.GetString("JWToken"));
+            
             return RedirectToAction(nameof(Index));
         }
         #endregion
@@ -83,17 +92,9 @@ namespace WebApplicationMVC.Controllers
             if (Id == 0)
                 return NotFound();
 
-            await _personRepository.DeleteAsync(ApiUrl.PersonRoute + "DeletePerson?id=", Id);
+            await _personRepository.DeleteAsync(ApiUrl.PersonRoute + "DeletePerson?id=", Id, HttpContext.Session.GetString("JWToken"));
 
-            return Json(new { success = true, message = "Borrado correctamente" });
-
-            //return RedirectToAction(nameof(Index));
-            //if (person == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return View(person);
+            return Json(new { success = true, message = "Borrado correctamente" });            
         }
         #endregion
     }

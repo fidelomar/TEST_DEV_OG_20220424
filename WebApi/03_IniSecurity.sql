@@ -1,4 +1,4 @@
-﻿-- User: root
+﻿-- User: ogarci4@gmail.com
 -- Pass: Abril22#
 
 INSERT INTO [dbo].[AspNetUsers]
