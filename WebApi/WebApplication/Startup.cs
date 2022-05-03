@@ -1,3 +1,4 @@
+#region Utils
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,6 +19,7 @@ using Web.Entities;
 using Web.Entities.Data;
 using Web.Repository;
 using Web.Repository.UnitOfWork;
+#endregion
 
 namespace WebApplication
 {
@@ -40,7 +42,9 @@ namespace WebApplication
 
             services.AddDatabaseDeveloperPageExceptionFilter();
             
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //services.AddDefaultIdentity<ApplicationUser>(options => 
+            //    options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<DatabaseContext>();
             
             services.AddRazorPages();

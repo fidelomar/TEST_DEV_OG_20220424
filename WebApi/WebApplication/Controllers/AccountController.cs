@@ -9,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Web.Entities;
 using WebApplication.Models;
 #endregion
 namespace WebApplication.Controllers
@@ -17,9 +18,9 @@ namespace WebApplication.Controllers
     [ApiController]
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IConfiguration _configuration;
-        public AccountController(UserManager<IdentityUser>
+        public AccountController(UserManager<ApplicationUser>
             userManager, IConfiguration configuration)
         {
             _userManager = userManager;
@@ -59,7 +60,7 @@ namespace WebApplication.Controllers
                     return Ok(new
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(token),
-                        expiration = token.ValidTo,
+                        id = user.UserId,
                         username = user.UserName
                     });
                 }

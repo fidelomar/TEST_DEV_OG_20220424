@@ -1,6 +1,7 @@
 ﻿#region Utils
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 using WebApplicationMVC.Config;
 using WebApplicationMVC.Models;
@@ -21,7 +22,7 @@ namespace WebApplicationMVC.Controllers
             return View(new PersonModel() { });
         }
         
-        [HttpGet]        
+        [HttpGet]
         public async Task<IActionResult> GetAllPersons()
         {
             
@@ -44,8 +45,7 @@ namespace WebApplicationMVC.Controllers
             if (!ModelState.IsValid)
                 return View();
             
-            person.UserId = 1;
-
+            person.UserId = Convert.ToInt32(HttpContext.Session.GetString("UserId"));
             await _personRepository.CreateAsync(ApiUrl.PersonRoute+"AddPerson", person, HttpContext.Session.GetString("JWToken"));
             
             return RedirectToAction(nameof(Index));

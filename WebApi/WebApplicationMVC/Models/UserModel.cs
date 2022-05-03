@@ -16,5 +16,6 @@ namespace WebApplicationMVC.Models
         [StringLength(10, MinimumLength = 4, ErrorMessage ="La contraseña debe tener entre 4 y 10 caracteres")]
         public string Password { get; set; }
         public string Token { get; set; }
+        public string Data { get; set; }
     }
 }

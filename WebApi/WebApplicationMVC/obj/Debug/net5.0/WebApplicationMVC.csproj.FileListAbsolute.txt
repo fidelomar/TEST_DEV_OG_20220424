@@ -145,8 +145,6 @@ E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\WebApplicationMVC.TagHelpers.input.cache
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\WebApplicationMVC.TagHelpers.output.cache
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\WebApplicationMVC.RazorCoreGenerate.cache
-E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Account\Index.cshtml.g.cs
-E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\WebApplicationMVC\obj\Debug\net5.0\Razor\Views\Report\Index.cshtml.g.cs

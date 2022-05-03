@@ -49,7 +49,7 @@ namespace WebApplicationMVC.Controllers
 
             UserModel user = await _repository.LoginAsync(ApiUrl.LoginRoute, model);
 
-            if(user.Token == null)
+            if(string.IsNullOrEmpty(user.Token))
             {
                 TempData["alert"] = "Información incorrecta";
                 return View();
@@ -62,6 +62,21 @@ namespace WebApplicationMVC.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
             HttpContext.Session.SetString("JWToken", user.Token);
+            HttpContext.Session.SetString("UserId", user.Id.ToString());
+
+            //Login para reportes
+            var UserReport = new UserModel
+            {
+                UserName = "ucand0021",
+                Password = "yNDVARG80sr@dDPc2yCT!"
+            };
+
+            var LoginReport = await _repository.LoginAsync(ApiUrl.ApiReportRoute + "candidato/api/login/authenticate", UserReport);
+            
+            if(!string.IsNullOrEmpty(LoginReport.Data))
+            {
+                HttpContext.Session.SetString("JWTokenReport", LoginReport.Data);
+            }
 
             return RedirectToAction("Index");
         }

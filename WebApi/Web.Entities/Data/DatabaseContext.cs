@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Web.Entities.Data
 {
-    public partial class DatabaseContext : IdentityDbContext<IdentityUser>
+    public partial class DatabaseContext : IdentityDbContext<ApplicationUser>
     {
         public DatabaseContext()
         {
