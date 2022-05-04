@@ -1,0 +1,15 @@
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\bin\Debug\net5.0\Web.Repository.deps.json
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\bin\Debug\net5.0\Web.Repository.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\bin\Debug\net5.0\Web.Repository.pdb
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\bin\Debug\net5.0\Web.Entities.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\bin\Debug\net5.0\Web.Entities.pdb
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.csproj.AssemblyReference.cache
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.AssemblyInfoInputs.cache
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.AssemblyInfo.cs
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.csproj.CoreCompileInputs.cache
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.csproj.CopyComplete
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\refint\Web.Repository.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\Web.Repository.pdb
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Repository\obj\Debug\net5.0\ref\Web.Repository.dll

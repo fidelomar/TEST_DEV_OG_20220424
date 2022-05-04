@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿#region Utils
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using WebApplicationMVC.Config;
 using WebApplicationMVC.Repository;
+#endregion
 
 namespace WebApplicationMVC.Controllers
 {

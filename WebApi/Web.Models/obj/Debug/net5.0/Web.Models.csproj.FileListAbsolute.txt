@@ -1,0 +1,12 @@
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\bin\Debug\net5.0\Web.Models.deps.json
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\bin\Debug\net5.0\Web.Models.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\bin\Debug\net5.0\Web.Models.pdb
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\Web.Models.csproj.AssemblyReference.cache
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\Web.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\Web.Models.AssemblyInfoInputs.cache
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\Web.Models.AssemblyInfo.cs
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\Web.Models.csproj.CoreCompileInputs.cache
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\Web.Models.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\refint\Web.Models.dll
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\Web.Models.pdb
+E:\githubrepositories_og\TEST_DEV_OG_20220424\WebApi\Web.Models\obj\Debug\net5.0\ref\Web.Models.dll

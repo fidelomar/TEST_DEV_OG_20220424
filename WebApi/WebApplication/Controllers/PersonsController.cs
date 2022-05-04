@@ -28,7 +28,8 @@ namespace WebApplication.Controllers
         {
             return View();
         }
-        
+
+        #region Add
         [Authorize]
         [HttpPost]
         [Route("AddPerson")]
@@ -38,7 +39,9 @@ namespace WebApplication.Controllers
             await context.AddPerson(person, _context);            
             return Ok(new TbPersonasFisica());
         }
+        #endregion
 
+        #region Edit
         [Authorize]
         [HttpPut]
         [Route("PutPerson")]
@@ -48,7 +51,9 @@ namespace WebApplication.Controllers
             await context.UpdatePerson(personasFisica, _context);            
             return Ok(new TbPersonasFisica());
         }
+        #endregion
 
+        #region Delete
         [Authorize]
         [HttpDelete]
         [Route("DeletePerson")]
@@ -58,7 +63,9 @@ namespace WebApplication.Controllers
             await context.DeletePerson(Id, _context);
             return Ok(new TbPersonasFisica());
         }
+        #endregion
 
+        #region Get
         [Authorize]
         [HttpGet]
         [Route("GetPerson")]
@@ -74,7 +81,9 @@ namespace WebApplication.Controllers
 
             return Ok(tbPersonasFisica);
         }
+        #endregion
 
+        #region GetAll
         [Authorize]
         [HttpGet]
         [Route("GetPersons")]
@@ -86,7 +95,7 @@ namespace WebApplication.Controllers
 
             return tbPersonasFisica;
         }
-
+        #endregion
 
     }
 }

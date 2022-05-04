@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Web.Entities.Data;
+﻿using Web.Entities.Data;
 
 namespace Web.Repository.UnitOfWork
 {

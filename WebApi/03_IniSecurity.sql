@@ -1,4 +1,4 @@
-﻿-- User: ogarci4@gmail.com
+﻿-- User: root
 -- Pass: Abril22#
 
 INSERT INTO [dbo].[AspNetUsers]
@@ -20,10 +20,10 @@ INSERT INTO [dbo].[AspNetUsers]
      VALUES
            (
            'b1accdab-fc0b-488b-9c9f-07a6f9e6b2b1',
-           'ogarci4@gmail.com',
-           'OGARCI4@GMAIL.COM',
-           'ogarci4@gmail.com',
-           'OGARCI4@GMAIL.COM',
+           'root',
+           'root',
+           'root',
+           'root',
            0,
            'AQAAAAEAACcQAAAAEOd6PXT525qkDINHz7A+leSZiZbdjDLNGIjrdaOqzbKZuWhicJFLcJyhPYzhUgWHXw==',
            'QJ3IQGQOAUOK4VO3ZNB63E3VJNXFL3GS',
