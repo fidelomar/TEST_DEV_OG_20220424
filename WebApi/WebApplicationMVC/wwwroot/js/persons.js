@@ -1,6 +1,6 @@
 ﻿var DataTable;
 
-$(document).ready(function () {
+$(document).ready(function () {    
     LoadDataTable();
 });
 
@@ -11,9 +11,21 @@ function LoadDataTable() {
             "type": "GET",
             "datatype": "json"
         },
+        "dom": 'Bfrtip',
+        "buttons": [
+            {
+                extend: 'csvHtml5',
+                text: 'Exportar',
+                exportOptions: {
+                    modifier: {
+                        search: 'none'
+                    }
+                }
+            }
+        ],
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "sin resultados - sorry",
+            "zeroRecords": "sin resultados -",
             "info": "Mostrar página _PAGE_ de _PAGES_",
             "infoEmpty": "No disponible",
             "infoFiltered": "(filtro de _MAX_ total registros)",
@@ -22,11 +34,11 @@ function LoadDataTable() {
             "search":"Buscar"
         },
         "columns":[
-            { "data": "firstName", "with": "30%" },
-            { "data": "lastName", "with": "30%" },
-            { "data": "name", "with": "30%" },
-            { "data": "rfc", "with": "20%" },
-            { "data": "birthDate", "with": "20%" },
+            { "data": "firstName", "with": "30%", "title": "APaterno" },
+            { "data": "lastName", "with": "30%", "title": "AMaterno" },
+            { "data": "name", "with": "30%", "title": "Nombre" },
+            { "data": "rfc", "with": "20%", "title": "RFC" },
+            { "data": "birthDate", "with": "20%", "title": "Fecha nacimiento" },
             {
                 "data": "id",
                 "render": function (data) {

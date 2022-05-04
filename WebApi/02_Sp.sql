@@ -78,6 +78,11 @@ BEGIN
 END;
 GO
 
+IF (OBJECT_ID('dbo.sp_ActualizarPersonaFisica', 'P') IS NOT NULL) BEGIN
+  DROP PROCEDURE dbo.sp_ActualizarPersonaFisica;
+END
+GO
+
 CREATE PROCEDURE dbo.sp_ActualizarPersonaFisica
 (
     @IdPersonaFisica INT,
@@ -94,7 +99,7 @@ BEGIN
     DECLARE @ID INT,
             @ERROR VARCHAR(500);
     BEGIN TRY
-        IF EXISTS
+        IF NOT EXISTS
         (
             SELECT *
             FROM dbo.Tb_PersonasFisicas
@@ -111,7 +116,8 @@ BEGIN
             ApellidoPaterno = @ApellidoPaterno,
             ApellidoMaterno = @ApellidoMaterno,
             RFC = @RFC,
-            FechaNacimiento = @FechaNacimiento
+            FechaNacimiento = @FechaNacimiento,
+            FechaActualizacion = GETDATE()
         WHERE IdPersonaFisica = @IdPersonaFisica;
         SELECT @IdPersonaFisica AS ERROR,
                'Registro exitoso' AS MENSAJEERROR;
@@ -124,6 +130,11 @@ BEGIN
 END;
 GO
 
+IF (OBJECT_ID('dbo.sp_EliminarPersonaFisica', 'P') IS NOT NULL) BEGIN
+  DROP PROCEDURE dbo.sp_EliminarPersonaFisica;
+END
+GO
+
 CREATE PROCEDURE dbo.sp_EliminarPersonaFisica
 (@IdPersonaFisica INT)
 AS
@@ -132,7 +143,7 @@ BEGIN
     DECLARE @ID INT,
             @ERROR VARCHAR(500);
     BEGIN TRY
-        IF EXISTS
+        IF NOT EXISTS
         (
             SELECT *
             FROM dbo.Tb_PersonasFisicas

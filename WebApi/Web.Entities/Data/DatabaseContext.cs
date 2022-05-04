@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
-
 namespace Web.Entities.Data
 {
     public partial class DatabaseContext : IdentityDbContext<ApplicationUser>

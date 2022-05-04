@@ -2,19 +2,13 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Web.Entities;
 using Web.Entities.Data;
 using Web.Repository;
@@ -39,19 +33,15 @@ namespace WebApplication
                 options.UseSqlServer(
                     Configuration.GetConnectionString("Connection")));
             services.AddSingleton<IConfiguration>(Configuration);
-
             services.AddDatabaseDeveloperPageExceptionFilter();
             
             //services.AddDefaultIdentity<ApplicationUser>(options => 
             //    options.SignIn.RequireConfirmedAccount = true)
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<DatabaseContext>();
-            
             services.AddRazorPages();
-            
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
 
             // For Identity  
             //services.AddIdentity<ApplicationUser, IdentityRole>()
