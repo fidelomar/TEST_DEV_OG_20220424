@@ -19,7 +19,7 @@ namespace WebApplicationMVC.Controllers
         #region Index
         public IActionResult Index()
         {
-            return View(new PersonModel() { });
+            return View(new PersonModel() { });            
         }
         
         [HttpGet]

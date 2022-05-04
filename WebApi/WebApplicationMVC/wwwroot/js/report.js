@@ -11,17 +11,44 @@ function LoadDataTable() {
             "type": "GET",
             "datatype": "json"
         },
+        "dom": 'Bfrtip',
+        "buttons": [
+            {
+                extend: 'csvHtml5',
+                text: 'Exportar',
+                exportOptions: {
+                    modifier: {
+                        search: 'none'
+                    }
+                }
+            }
+        ],
+        "pageLength": 20,
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por página",
+            "zeroRecords": "sin resultados -",
+            "info": "Mostrar página _PAGE_ de _PAGES_",
+            "infoEmpty": "No disponible",
+            "infoFiltered": "(filtro de _MAX_ total registros)",            
+            "search": "Buscar",
+            "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            },
+        },
         "columns": [
-            { "data": "id", "with": "10%" , "title": "id" },
-            { "data": "fechaRegistroEmpresa", "with": "10%" },
-            { "data": "razonSocial", "with": "10%" },
-            { "data": "rfc", "with": "10%" },
-            { "data": "sucursal", "with": "10%" },
-            { "data": "idEmpleado", "with": "10%" },
-            { "data": "nombre", "with": "10%" },
-            { "data": "paterno", "with": "10%" },
-            { "data": "materno", "with": "10%" },
-            { "data": "idviaje", "with": "10%" }            
+            { "data": "idCliente", "with": "10%" , "title": "id"},
+            { "data": "fechaRegistroEmpresa", "with": "10%", "title": "Fecha registro"},
+            { "data": "razonSocial", "with": "10%", "title": "Razón Social" },
+            { "data": "rfc", "with": "10%", "title": "RFC" },
+            { "data": "sucursal", "with": "10%", "title": "Sucursal" },
+            { "data": "idEmpleado", "with": "10%", "title": "Id Empleado" },
+            { "data": "nombre", "with": "10%", "title": "Nombre"},
+            { "data": "paterno", "with": "10%", "title": "Paterno" },
+            { "data": "materno", "with": "10%", "title": "Materno" },
+            { "data": "idViaje", "with": "10%", "title": "Id Viaje" }
         ]
     });
 }

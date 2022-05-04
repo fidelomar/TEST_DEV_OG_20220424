@@ -1,9 +1,8 @@
 ﻿#region Utils
 using Newtonsoft.Json;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Dynamic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,7 +83,7 @@ namespace WebApplicationMVC.Repository
                 return null;
             }
         }
-        public async Task<T[]> GetReportAsync(string url, string token = "")
+        public async Task<IEnumerable> GetReportAsync(string url, string token = "")
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             var client = _clientFactory.CreateClient();
@@ -99,40 +98,12 @@ namespace WebApplicationMVC.Repository
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
+                var responseData = new { data = Enumerable.Empty<ReportModel>() };
+                var deserialize = JsonConvert.DeserializeAnonymousType(jsonString, responseData);
+                IEnumerable<ReportModel> items = null;
+                items = deserialize.data;
 
-                  /*  
-                    var responseData = new
-                    {
-                        data = new[]
-                        {
-                            new {
-                                IdCliente = "",
-                                FechaRegistroEmpresa = "",
-                                RazonSocial = "",
-                                Rfc = "",
-                                Sucursal = "",
-                                IdEmpleado = "",
-                                Nombre = "",
-                                Paterno = "",
-                                Materno = "",
-                                IdViaje = ""
-                            }
-                        }
-                    };
-                    var deserialize = JsonConvert.DeserializeAnonymousType(jsonString, responseData);
-                    IEnumerable<Data> items = null;
-                    
-                */
-                return JsonConvert.DeserializeObject<T[]>(jsonString);
-                  // return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
-                    /*
-                    var ObjMovmientos = JsonConvert
-                        .DeserializeObject<IEnumerable<ReportModel>>(jsonString);
-                    */
-                    //return JsonConvert.DeserializeObject<ExpandoObject>(jsonString);
-                
-                
-                //return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
+                return items;
             }
             else
             {
