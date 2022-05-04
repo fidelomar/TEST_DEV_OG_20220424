@@ -24,8 +24,7 @@ namespace WebApplicationMVC.Controllers
         
         [HttpGet]
         public async Task<IActionResult> GetAllPersons()
-        {
-            
+        {            
             return Json(new { data = 
                 await _personRepository
                 .GetAllAsync(ApiUrl.PersonRoute+"GetPersons", HttpContext.Session.GetString("JWToken")) });

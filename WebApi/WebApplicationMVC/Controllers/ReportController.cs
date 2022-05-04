@@ -20,9 +20,7 @@ namespace WebApplicationMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Json(new
-            {
-                data =
+            return Json(new{data =
                 await _repository
                 .GetReportAsync(ApiUrl.ApiReportRoute + "candidato/api/customers", HttpContext.Session.GetString("JWTokenReport"))
             });

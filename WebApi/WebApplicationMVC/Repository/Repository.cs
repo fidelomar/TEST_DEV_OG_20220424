@@ -84,7 +84,7 @@ namespace WebApplicationMVC.Repository
                 return null;
             }
         }
-        public async Task<IEnumerable> GetReportAsync(string url, string token = "")
+        public async Task<T[]> GetReportAsync(string url, string token = "")
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             var client = _clientFactory.CreateClient();
@@ -100,7 +100,7 @@ namespace WebApplicationMVC.Repository
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
 
-                    
+                  /*  
                     var responseData = new
                     {
                         data = new[]
@@ -121,9 +121,10 @@ namespace WebApplicationMVC.Repository
                     };
                     var deserialize = JsonConvert.DeserializeAnonymousType(jsonString, responseData);
                     IEnumerable<Data> items = null;
-                    //items = deserialize.data;
-
-                   return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
+                    
+                */
+                return JsonConvert.DeserializeObject<T[]>(jsonString);
+                  // return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
                     /*
                     var ObjMovmientos = JsonConvert
                         .DeserializeObject<IEnumerable<ReportModel>>(jsonString);
