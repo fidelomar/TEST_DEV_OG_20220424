@@ -3,9 +3,11 @@ using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using WebApplicationMVC.Models;
 #endregion
 namespace WebApplicationMVC.Repository
 {
@@ -98,15 +100,37 @@ namespace WebApplicationMVC.Repository
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
 
-                try
-                {
-                    var test = JsonConvert.DeserializeObject<List<T>>(jsonString);
-                }
-                catch (Exception ex)
-                {
-                    var msj = ex.Message;
-                }
-                return null;
+                    
+                    var responseData = new
+                    {
+                        data = new[]
+                        {
+                            new {
+                                IdCliente = "",
+                                FechaRegistroEmpresa = "",
+                                RazonSocial = "",
+                                Rfc = "",
+                                Sucursal = "",
+                                IdEmpleado = "",
+                                Nombre = "",
+                                Paterno = "",
+                                Materno = "",
+                                IdViaje = ""
+                            }
+                        }
+                    };
+                    var deserialize = JsonConvert.DeserializeAnonymousType(jsonString, responseData);
+                    IEnumerable<Data> items = null;
+                    //items = deserialize.data;
+
+                   return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
+                    /*
+                    var ObjMovmientos = JsonConvert
+                        .DeserializeObject<IEnumerable<ReportModel>>(jsonString);
+                    */
+                    //return JsonConvert.DeserializeObject<ExpandoObject>(jsonString);
+                
+                
                 //return JsonConvert.DeserializeObject<IEnumerable<T>>(jsonString);
             }
             else

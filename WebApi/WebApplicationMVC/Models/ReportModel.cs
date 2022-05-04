@@ -1,7 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 
 namespace WebApplicationMVC.Models
 {
+    public class Data
+    {        
+        public IEnumerable<ReportModel> report { get; set; }
+    } 
+
     public class ReportModel
     {
         public int IdCliente { get; set; }
