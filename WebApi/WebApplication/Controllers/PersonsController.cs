@@ -30,7 +30,7 @@ namespace WebApplication.Controllers
         }
 
         #region Add
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         [Route("AddPerson")]
         public async Task<IActionResult> AddPerson([FromBody] TbPersonasFisica person)

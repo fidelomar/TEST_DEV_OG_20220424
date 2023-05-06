@@ -45,17 +45,10 @@ namespace WebApplicationMVC.Controllers
                 return View();
             
             person.UserId = Convert.ToInt32(HttpContext.Session.GetString("UserId"));
-            try
-            {
-                await _personRepository.CreateAsync(ApiUrl.PersonRoute+"AddPerson", person, HttpContext.Session.GetString("JWToken"));
-            } catch(Exception ex)
-            {
-                var message = ex.Message;
-            }
-            
+            await _personRepository.CreateAsync(ApiUrl.PersonRoute+"AddPerson", person, HttpContext.Session.GetString("JWToken"));
             
             return RedirectToAction(nameof(Index));
-            }
+        }
         #endregion
         #region Edit
         [HttpGet]
