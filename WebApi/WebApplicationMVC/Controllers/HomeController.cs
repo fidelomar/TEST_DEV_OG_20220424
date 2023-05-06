@@ -37,7 +37,7 @@ namespace WebApplicationMVC.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            UserModel user = new UserModel();
+            UserModel user = new UserModel(); 
             return View(user);
         }
 
@@ -57,18 +57,18 @@ namespace WebApplicationMVC.Controllers
 
             var Identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
                 Identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
-
+            
             var principal = new ClaimsPrincipal(Identity);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
+            
             HttpContext.Session.SetString("JWToken", user.Token);
             HttpContext.Session.SetString("UserId", user.Id.ToString());
 
             //Login para reportes
             var UserReport = new UserModel
             {
-                UserName = "ucand0021",
-                Password = "yNDVARG80sr@dDPc2yCT!"
+                UserName = "og",
+                Password = "sa"
             };
 
             var LoginReport = await _repository.LoginAsync(ApiUrl.ApiReportRoute + "candidato/api/login/authenticate", UserReport);
